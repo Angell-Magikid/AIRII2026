@@ -3060,3 +3060,30 @@ body.lang-en .zh-only { display: none !important; }
         padding: 24px;
     }
 }
+
+/* ===== Social Topbar Mobile ===== */
+@media (max-width: 768px) {
+    .social-topbar-inner {
+        flex-direction: column;
+        gap: 4px;
+        padding: 6px 16px;
+        font-size: 0.75rem;
+    }
+    .social-topbar-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .social-topbar-links a {
+        font-size: 0.75rem;
+    }
+}
+@media (max-width: 480px) {
+    .social-topbar-links a {
+        gap: 3px;
+    }
+    .social-topbar-links a svg {
+        width: 12px;
+        height: 12px;
+    }
+}
