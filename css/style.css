@@ -30,6 +30,30 @@
     --color-magenta: #FF3D9A;
     --color-orange: #FF8C42;
     --color-green: #00D97E;
+
+    /* ===== Shop Green Theme overrides ===== */
+    /* Applied via <body class="theme-shop"> on shop.html.
+       The persistent nav stays brand-cyan; only shop content turns green. */
+    --color-shop: #00C46A;
+    --color-shop-dark: #00A057;
+    --color-shop-light: #4DE59B;
+    --color-shop-soft: rgba(0, 196, 106, 0.12);
+
+body.theme-shop {
+    --color-primary: var(--color-shop);
+    --color-primary-dark: var(--color-shop-dark);
+    --color-primary-light: var(--color-shop-light);
+    --color-cyan: var(--color-shop);
+    --color-cyan-soft: var(--color-shop-soft);
+}
+/* Keep the global navigation brand-cyan even on the green Shop page */
+body.theme-shop .navbar .nav-menu > li > a,
+body.theme-shop .navbar .nav-menu > li > a:hover { color: #00D4FF; }
+body.theme-shop .navbar .nav-tool-link { color: #00D4FF; }
+body.theme-shop .navbar a.nav-tool-link[style] { color: #00D4FF !important; }
+body.theme-shop .navbar .btn-primary,
+body.theme-shop .navbar .btn-primary:hover { background: #00D4FF; border-color: #00D4FF; }
+body.theme-shop .navbar .nav-toggle span { background: #00D4FF; }
     --color-yellow: #FFD60A;
 
     /* Dark Surfaces */
@@ -2481,7 +2505,7 @@ body.lang-en .zh-only { display: none !important; }
     position: relative;
     background: var(--color-ink);
     color: white;
-    padding: calc(var(--nav-height) + 72px) 0 72px;
+    padding: var(--space-3xl) 0 var(--space-3xl);
     overflow: hidden;
 }
 .donate-hero::before {
@@ -3175,7 +3199,7 @@ body.lang-en .zh-only { display: none !important; }
     .social-topbar-inner {
         flex-direction: column;
         gap: 4px;
-        padding: 6px 16px;
+        padding: 6px 24px;
         font-size: 0.75rem;
     }
     .social-topbar-links {
