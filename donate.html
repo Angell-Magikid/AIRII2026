@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate — AIRII | AI Robotics Innovation Institute</title>
+    <meta name="description" content="Support AIRII's mission. Your donation funds youth charity programs, educational support for children with special medical needs, and the Boundless AIRII International AI Robotics Hackathon.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="lang-en">
+<!-- ===== Social Top Bar ===== -->
+<div class="social-topbar">
+    <div class="social-topbar-inner">
+        <span>REC Foundation Global Content Partner · 501(c)(3) Nonprofit</span>
+        <div class="social-topbar-links">
+            <a href="https://youtube.com/@airii" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube</a>
+            <a href="https://instagram.com/airii" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg> Instagram</a>
+            <div class="lang-toggle" style="margin-left:12px;">
+                <button class="active" onclick="setLang('en')">EN</button>
+                <button onclick="setLang('zh')">中文</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== Navigation ===== -->
+<nav class="navbar navbar-dark" id="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><img src="images/magikid-logo.png" alt="AIRII" class="nav-logo-img"></a>
+        <ul class="nav-menu">
+            <li class="has-dropdown">
+                <a href="about.html">About Us <span class="arrow">&#9662;</span></a>
+                <div class="dropdown">
+                    <a href="about.html#mission">Mission &amp; Vision</a>
+                    <a href="about.html#story">Our Story</a>
+                    <a href="about.html#rec-partnership">REC Foundation Partnership</a>
+                    <a href="about.html#team">Team</a>
+                    <a href="about.html#news">News &amp; Media</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html#compliance">Compliance &amp; Transparency</a>
+                </div>
+            </li>
+            <li><a href="workshop.html">Workshop</a></li>
+            <li><a href="competition.html">Competition</a></li>
+            <li><a href="innovation.html">Innovation</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="training.html">Training</a></li>
+        </ul>
+        <div class="nav-tools">
+            <a href="shop.html" class="nav-tool-link">Shop</a>
+            <a href="donate.html" class="nav-tool-link" style="color:var(--color-cyan); font-weight:700;">Donate</a>
+            <a href="index.html#partner" class="btn btn-primary btn-sm">Partner With Us &rarr;</a>
+            <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== Donate Hero ===== -->
+<section class="donate-hero">
+    <div class="container">
+        <div class="breadcrumb" style="margin-bottom:20px;"><a href="index.html">Home</a> <span>/</span> <span class="en-only">Donate</span><span class="zh-only">捐赠</span></div>
+        <span class="eyebrow eyebrow-light">Support AIRII</span>
+        <h1 class="en-only">Your Gift Builds<br>the Next Generation of Innovators</h1>
+        <h1 class="zh-only">您的捐赠<br>培育下一代创新者</h1>
+        <p class="hero-subtitle en-only">Every donation directly supports youth education, children with special medical needs, and the Boundless AIRII International AI Robotics Hackathon. As a 501(c)(3) nonprofit, your contribution is tax-deductible.</p>
+        <p class="hero-subtitle zh-only">每一笔捐赠都直接用于青少年教育、特殊疾病儿童教育支持，以及无界AIRII国际AI机器人创新黑客松。作为501(c)(3)非营利组织，您的捐赠可依法抵税。</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+            <a href="#donate-form" class="btn btn-primary btn-lg btn-arrow en-only">Donate Now</a>
+            <a href="#donate-form" class="btn btn-primary btn-lg btn-arrow zh-only">立即捐赠</a>
+            <a href="#purposes" class="btn btn-ghost-light btn-lg en-only">Learn Where Your Money Goes</a>
+            <a href="#purposes" class="btn btn-ghost-light btn-lg zh-only">了解捐赠用途</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Donation Purposes ===== -->
+<section class="section section-light" id="purposes">
+    <div class="container">
+        <div class="fade-up" style="text-align:center; margin-bottom:20px;">
+            <span class="eyebrow en-only">Where Your Donation Goes</span>
+            <span class="eyebrow zh-only">捐赠用途</span>
+            <h2 class="en-only">Three Programs. One Mission.</h2>
+            <h2 class="zh-only">三大项目 · 同一使命</h2>
+            <p style="max-width:640px; margin:16px auto 0; color:var(--text-muted); font-size:1.0625rem;" class="en-only">Your generosity fuels three distinct initiatives that bring AI robotics education to those who need it most.</p>
+            <p style="max-width:640px; margin:16px auto 0; color:var(--text-muted); font-size:1.0625rem;" class="zh-only">您的慷慨捐赠支持三大公益项目，将AI机器人教育带给最需要的人。</p>
+        </div>
+
+        <div class="donate-purpose-grid">
+            <!-- Purpose 1: Youth Charity -->
+            <div class="donate-purpose-card fade-up">
+                <div class="donate-purpose-img">
+                    <div class="donate-purpose-icon">&#129490;</div>
+                    <img src="images/classroom.png" alt="Youth Charity Activities">
+                </div>
+                <div class="donate-purpose-body">
+                    <h3 class="en-only">Youth Charity Activities</h3>
+                    <h3 class="zh-only">青少年公益活动组织</h3>
+                    <p class="en-only">Organizing free robotics workshops, community AI literacy events, and STEM outreach programs for underserved youth in local communities across North America.</p>
+                    <p class="zh-only">为北美各地社区的弱势青少年组织免费机器人工作坊、社区AI素养活动和STEM推广项目。</p>
+                    <div class="donate-purpose-amount en-only">Funds: Workshop materials · Venue · Instructor stipends · Robot kits</div>
+                    <div class="donate-purpose-amount zh-only">资金用途：工作坊材料 · 场地 · 讲师补贴 · 机器人套件</div>
+                    <a href="#donate-form" class="donate-purpose-btn en-only" onclick="selectPurpose('youth')">Support This Program &rarr;</a>
+                    <a href="#donate-form" class="donate-purpose-btn zh-only" onclick="selectPurpose('youth')">支持此项目 &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Purpose 2: Special Disease Youth -->
+            <div class="donate-purpose-card fade-up">
+                <div class="donate-purpose-img">
+                    <div class="donate-purpose-icon">&#10084;</div>
+                    <img src="images/training.png" alt="Special Disease Education Support">
+                </div>
+                <div class="donate-purpose-body">
+                    <h3 class="en-only">Education Support for Children with Special Medical Needs</h3>
+                    <h3 class="zh-only">特殊疾病青少年儿童教育活动支持</h3>
+                    <p class="en-only">Providing tailored AI robotics education programs, hospital-based learning kits, and adaptive technology workshops for children battling chronic or life-threatening illnesses.</p>
+                    <p class="zh-only">为患有慢性或重大疾病的儿童提供定制化AI机器人教育项目、医院学习套件和适应性技术工作坊。</p>
+                    <div class="donate-purpose-amount en-only">Funds: Adaptive robot kits · Hospital program licensing · Online learning access · Family support</div>
+                    <div class="donate-purpose-amount zh-only">资金用途：适应性机器人套件 · 医院项目授权 · 在线学习平台 · 家庭支持</div>
+                    <a href="#donate-form" class="donate-purpose-btn en-only" onclick="selectPurpose('medical')">Support This Program &rarr;</a>
+                    <a href="#donate-form" class="donate-purpose-btn zh-only" onclick="selectPurpose('medical')">支持此项目 &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Purpose 3: Boundless AIRII Hackathon -->
+            <div class="donate-purpose-card fade-up">
+                <div class="donate-purpose-img">
+                    <div class="donate-purpose-icon">&#129302;</div>
+                    <img src="images/competition-main.png" alt="Boundless AIRII Hackathon">
+                </div>
+                <div class="donate-purpose-body">
+                    <h3 class="en-only">Boundless AIRII — International AI Robotics Hackathon</h3>
+                    <h3 class="zh-only">无界AIRII — 国际AI机器人创新黑客松</h3>
+                    <p class="en-only">An international hackathon bringing together student teams from around the world to solve real-world challenges with AI and robotics. Funding covers travel grants, hardware, judges, and venue.</p>
+                    <p class="zh-only">汇聚全球学生团队的国际黑客松，用AI和机器人技术解决真实世界挑战。资金用于差旅补助、硬件、评委和场地。</p>
+                    <div class="donate-purpose-amount en-only">Funds: Travel grants for underrepresented teams · Hardware kits · Venue · Prize pool</div>
+                    <div class="donate-purpose-amount zh-only">资金用途：弱势团队差旅补助 · 硬件套件 · 场地 · 奖金池</div>
+                    <a href="#donate-form" class="donate-purpose-btn en-only" onclick="selectPurpose('hackathon')">Support This Program &rarr;</a>
+                    <a href="#donate-form" class="donate-purpose-btn zh-only" onclick="selectPurpose('hackathon')">支持此项目 &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tax Info -->
+        <div class="tax-info-box fade-up">
+            <div class="tax-info-box-icon">&#128196;</div>
+            <div>
+                <h4 class="en-only">Tax-Deductible Donation</h4>
+                <h4 class="zh-only">可抵税捐赠</h4>
+                <p class="en-only">AIRII (formerly Magikid EmpowerTech Foundation) is a registered 501(c)(3) tax-exempt nonprofit organization (EIN available upon request). All donations are tax-deductible to the fullest extent allowed by U.S. law. You will receive an automated tax receipt via email after your donation.</p>
+                <p class="zh-only">AIRII（前身为Magikid EmpowerTech Foundation）是注册的501(c)(3)免税非营利组织（EIN可索取）。所有捐赠均按美国法律最大程度抵税。捐赠后您将收到自动发送的抵税收据邮件。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Donation Form ===== -->
+<section class="section" id="donate-form">
+    <div class="container" style="max-width:720px;">
+        <div class="fade-up" style="text-align:center; margin-bottom:40px;">
+            <span class="eyebrow en-only">Make a Donation</span>
+            <span class="eyebrow zh-only">立即捐赠</span>
+            <h2 class="en-only">Choose Your Impact</h2>
+            <h2 class="zh-only">选择您的捐赠方式</h2>
+        </div>
+
+        <div class="donate-form-card fade-up">
+            <!-- Type Toggle -->
+            <div class="donate-type-toggle">
+                <button class="active" onclick="setDonateType('once')">
+                    <span class="en-only">One-Time</span>
+                    <span class="zh-only">单次捐赠</span>
+                </button>
+                <button onclick="setDonateType('monthly')">
+                    <span class="en-only">Monthly Recurring</span>
+                    <span class="zh-only">每月持续捐赠</span>
+                </button>
+            </div>
+
+            <!-- Amount Selection -->
+            <label style="display:block; font-weight:600; margin-bottom:12px; color:var(--text-dark);" class="en-only">Select Amount</label>
+            <label style="display:block; font-weight:600; margin-bottom:12px; color:var(--text-dark);" class="zh-only">选择金额</label>
+            <div class="donate-amount-grid">
+                <button class="donate-amount-btn" onclick="setAmount(25, this)">$25<small class="en-only">Starter</small><small class="zh-only">起步</small></button>
+                <button class="donate-amount-btn active" onclick="setAmount(50, this)">$50<small class="en-only">Supporter</small><small class="zh-only">支持者</small></button>
+                <button class="donate-amount-btn" onclick="setAmount(100, this)">$100<small class="en-only">Innovator</small><small class="zh-only">创新者</small></button>
+                <button class="donate-amount-btn" onclick="setAmount(250, this)">$250<small class="en-only">Builder</small><small class="zh-only">建造者</small></button>
+                <button class="donate-amount-btn" onclick="setAmount(500, this)">$500<small class="en-only">Champion</small><small class="zh-only">冠军</small></button>
+                <button class="donate-amount-btn" onclick="setAmount(1000, this)">$1,000<small class="en-only">Visionary</small><small class="zh-only">远见者</small></button>
+            </div>
+
+            <!-- Custom Amount -->
+            <input type="number" class="donate-custom-input" id="customAmount" placeholder="Enter custom amount ($)" oninput="setCustomAmount(this)">
+
+            <!-- Purpose Select -->
+            <label style="display:block; font-weight:600; margin-bottom:12px; color:var(--text-dark);" class="en-only">Direct Your Donation</label>
+            <label style="display:block; font-weight:600; margin-bottom:12px; color:var(--text-dark);" class="zh-only">指定捐赠用途</label>
+            <select class="donate-purpose-select" id="purposeSelect">
+                <option value="general" class="en-only">Wherever it's needed most</option>
+                <option value="general" class="zh-only">最需要的地方</option>
+                <option value="youth" class="en-only">Youth Charity Activities</option>
+                <option value="youth" class="zh-only">青少年公益活动</option>
+                <option value="medical" class="en-only">Special Disease Children Education</option>
+                <option value="medical" class="zh-only">特殊疾病儿童教育支持</option>
+                <option value="hackathon" class="en-only">Boundless AIRII Hackathon</option>
+                <option value="hackathon" class="zh-only">无界AIRII黑客松</option>
+            </select>
+
+            <!-- Submit -->
+            <button class="donate-submit-btn" onclick="submitDonation()">
+                <span class="en-only">Donate <span id="displayAmount">$50</span> <span id="displayType"></span></span>
+                <span class="zh-only">捐赠 <span id="displayAmountZh">$50</span> <span id="displayTypeZh"></span></span>
+            </button>
+
+            <p style="text-align:center; font-size:0.8125rem; color:var(--text-muted); margin-top:16px;" class="en-only">Secure payment powered by Stripe. You will be redirected to complete your donation.</p>
+            <p style="text-align:center; font-size:0.8125rem; color:var(--text-muted); margin-top:16px;" class="zh-only">支付由Stripe安全加密处理。您将被重定向以完成捐赠。</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Impact Video ===== -->
+<section class="section section-light">
+    <div class="container">
+        <div class="fade-up" style="text-align:center; margin-bottom:40px;">
+            <span class="eyebrow en-only">See Your Impact</span>
+            <span class="eyebrow zh-only">看见您的影响</span>
+            <h2 class="en-only">Every Dollar Makes a Difference</h2>
+            <h2 class="zh-only">每一分钱都在改变世界</h2>
+        </div>
+
+        <div class="impact-video-section fade-up">
+            <img src="images/hero-main.png" alt="AIRII Impact">
+            <div class="impact-video-content">
+                <button class="impact-play-btn" onclick="window.open('https://youtube.com/@airii','_blank')">&#9654;</button>
+                <h2 class="en-only">Watch: How AIRII Changed These Students' Lives</h2>
+                <h2 class="zh-only">观看：AIRII如何改变了这些学生的人生</h2>
+                <p class="en-only" style="color:rgba(255,255,255,0.85); margin-top:16px;">From hospital beds to hackathon stages — meet the students whose lives were transformed by AIRII programs funded by donors like you.</p>
+                <p class="zh-only" style="color:rgba(255,255,255,0.85); margin-top:16px;">从病床到黑客松舞台——认识那些因您的捐赠而改变人生的学生们。</p>
+            </div>
+        </div>
+
+        <!-- Info Strip -->
+        <div class="donate-info-strip fade-up">
+            <div class="donate-info-item">
+                <div class="donate-info-icon">&#127979;</div>
+                <h4 class="en-only">12,000+ Students Reached</h4>
+                <h4 class="zh-only">覆盖12,000+学生</h4>
+                <p class="en-only">Across 200+ schools and community centers in North America</p>
+                <p class="zh-only">遍布北美200+学校和社区中心</p>
+            </div>
+            <div class="donate-info-item">
+                <div class="donate-info-icon">&#129302;</div>
+                <h4 class="en-only">500+ Robot Kits Donated</h4>
+                <h4 class="zh-only">捐赠500+机器人套件</h4>
+                <p class="en-only">Distributed to underfunded schools and hospital education programs</p>
+                <p class="zh-only">发放给资金不足的学校和医院教育项目</p>
+            </div>
+            <div class="donate-info-item">
+                <div class="donate-info-icon">&#127942;</div>
+                <h4 class="en-only">100% to Programs</h4>
+                <h4 class="zh-only">100%用于项目</h4>
+                <p class="en-only">Operating costs covered by partners — every donated dollar goes to programs</p>
+                <p class="zh-only">运营费用由合作伙伴承担——每一分捐赠都用于项目</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Wall of Thanks ===== -->
+<section class="section wall-of-thanks" id="thanks">
+    <div class="container">
+        <div class="fade-up" style="text-align:center; margin-bottom:40px;">
+            <span class="eyebrow en-only">Wall of Thanks</span>
+            <span class="eyebrow zh-only">捐赠鸣谢</span>
+            <h2 class="en-only">Our Donors Make It Possible</h2>
+            <h2 class="zh-only">感谢每一位捐赠者</h2>
+            <p style="max-width:560px; margin:16px auto 0; color:var(--text-muted);" class="en-only">We are deeply grateful to every individual and organization who has supported AIRII's mission.</p>
+            <p style="max-width:560px; margin:16px auto 0; color:var(--text-muted);" class="zh-only">我们深深感谢每一位支持AIRII使命的个人和组织。</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="thanks-stats fade-up">
+            <div class="thanks-stat">
+                <div class="thanks-stat-num">$284,500</div>
+                <div class="thanks-stat-label en-only">Total Donated in 2025</div>
+                <div class="thanks-stat-label zh-only">2025年捐赠总额</div>
+            </div>
+            <div class="thanks-stat">
+                <div class="thanks-stat-num">1,240+</div>
+                <div class="thanks-stat-label en-only">Individual Donors</div>
+                <div class="thanks-stat-label zh-only">个人捐赠者</div>
+            </div>
+            <div class="thanks-stat">
+                <div class="thanks-stat-num">36</div>
+                <div class="thanks-stat-label en-only">Corporate Sponsors</div>
+                <div class="thanks-stat-label zh-only">企业赞助商</div>
+            </div>
+            <div class="thanks-stat">
+                <div class="thanks-stat-num">12,000+</div>
+                <div class="thanks-stat-label en-only">Students Impacted</div>
+                <div class="thanks-stat-label zh-only">受助学生</div>
+            </div>
+        </div>
+
+        <!-- Donor Cards -->
+        <div class="donor-wall fade-up">
+            <div class="donor-card">
+                <div class="donor-avatar" style="background:linear-gradient(135deg,#00D4FF,#0066FF);">L</div>
+                <div class="donor-name">Linda &amp; David Chen</div>
+                <div class="donor-amount">$5,000</div>
+                <div class="donor-message en-only">"Education is the best investment in our children's future."</div>
+                <div class="donor-message zh-only">"教育是对孩子未来最好的投资。"</div>
+            </div>
+            <div class="donor-card">
+                <div class="donor-avatar" style="background:linear-gradient(135deg,#7B61FF,#0066FF);">U</div>
+                <div class="donor-name">Unitree Robotics</div>
+                <div class="donor-amount">$25,000</div>
+                <div class="donor-message en-only">"Empowering the next generation of robotics engineers."</div>
+                <div class="donor-message zh-only">"赋能下一代机器人工程师。"</div>
+            </div>
+            <div class="donor-card">
+                <div class="donor-avatar" style="background:linear-gradient(135deg,#FF8C42,#FF3D9A);">S</div>
+                <div class="donor-name">Sarah Mitchell</div>
+                <div class="donor-amount">$500 / month</div>
+                <div class="donor-message en-only">"My son found his passion in AIRII's program. This is my way of giving back."</div>
+                <div class="donor-message zh-only">"我的儿子在AIRII的项目中找到了热情。这是我回馈的方式。"</div>
+            </div>
+            <div class="donor-card">
+                <div class="donor-avatar" style="background:linear-gradient(135deg,#00D97E,#00D4FF);">R</div>
+                <div class="donor-name">REC Foundation</div>
+                <div class="donor-amount">$50,000</div>
+                <div class="donor-message en-only">"Proud partners in building the future of robotics education."</div>
+                <div class="donor-message zh-only">"为共建机器人教育的未来而自豪。"</div>
+            </div>
+            <div class="donor-card">
+                <div class="donor-avatar" style="background:linear-gradient(135deg,#FFD60A,#FF8C42);">A</div>
+                <div class="donor-name">Anonymous</div>
+                <div class="donor-amount">$10,000</div>
+                <div class="donor-message en-only">"For the kids who will build the world we can't yet imagine."</div>
+                <div class="donor-message zh-only">"为了那些将建造我们无法想象的世界的孩子们。"</div>
+            </div>
+            <div class="donor-card">
+                <div class="donor-avatar" style="background:linear-gradient(135deg,#00D4FF,#7B61FF);">E</div>
+                <div class="donor-name">EngineAI</div>
+                <div class="donor-amount">$15,000</div>
+                <div class="donor-message en-only">"Building humanoid robots for tomorrow, starting with today's students."</div>
+                <div class="donor-message zh-only">"为明天打造人形机器人，从今天的学生开始。"</div>
+            </div>
+            <div class="donor-card">
+                <div class="donor-avatar" style="background:linear-gradient(135deg,#FF3D9A,#7B61FF);">M</div>
+                <div class="donor-name">Michael &amp; Jennifer Wang</div>
+                <div class="donor-amount">$2,500</div>
+                <div class="donor-message en-only">"In memory of our daughter's battle — may other children find joy through learning."</div>
+                <div class="donor-message zh-only">"纪念我们女儿的勇敢抗争——愿更多孩子通过学习找到快乐。"</div>
+            </div>
+            <div class="donor-card">
+                <div class="donor-avatar" style="background:linear-gradient(135deg,#0066FF,#00D97E);">F</div>
+                <div class="donor-name">Fourier Intelligence</div>
+                <div class="donor-amount">$8,000</div>
+                <div class="donor-message en-only">"Technology should serve humanity — starting with education."</div>
+                <div class="donor-message zh-only">"科技应服务于人类——从教育开始。"</div>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:40px;" class="fade-up">
+            <p style="color:var(--text-muted); font-size:0.875rem; margin-bottom:16px;" class="en-only">Want to see your name here? Donate today and join our community of changemakers.</p>
+            <p style="color:var(--text-muted); font-size:0.875rem; margin-bottom:16px;" class="zh-only">想在这里看到您的名字？立即捐赠，加入我们的改变者社区。</p>
+            <a href="#donate-form" class="btn btn-primary btn-lg en-only">Become a Donor &rarr;</a>
+            <a href="#donate-form" class="btn btn-primary btn-lg zh-only">成为捐赠者 &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+    <div class="container">
+        <div class="fade-up">
+            <span class="eyebrow eyebrow-light en-only">Have Questions?</span>
+            <span class="eyebrow eyebrow-light zh-only">有疑问？</span>
+            <h2 class="en-only">Talk to Us About<br>Your Donation</h2>
+            <h2 class="zh-only">与我们聊聊<br>您的捐赠</h2>
+            <p class="en-only">Whether you're considering a major gift, corporate sponsorship, or planned giving — we'd love to help you find the best way to make an impact.</p>
+            <p class="zh-only">无论您是想大额捐赠、企业赞助还是计划性捐赠——我们很乐意帮您找到最佳的影响力方式。</p>
+            <div class="cta-actions">
+                <a href="mailto:donate@airii.org" class="btn btn-primary btn-lg en-only">Email donate@airii.org</a>
+                <a href="mailto:donate@airii.org" class="btn btn-primary btn-lg zh-only">联系 donate@airii.org</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo"><img src="images/airii-logo.png" alt="AIRII" class="nav-logo-img" style="height:34px;"></a>
+                <p>AI Robotics Innovation Institute (formerly Magikid EmpowerTech Foundation) — a 501(c)(3) nonprofit organization and REC Foundation Global Content Partner.</p>
+                <div class="footer-social">
+                    <a href="https://youtube.com/@airii" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://instagram.com/airii" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+                    <a href="https://linkedin.com/company/airii" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col"><h6>About</h6><ul><li><a href="about.html">About AIRII</a></li><li><a href="about.html#rec-partnership">REC Partnership</a></li><li><a href="about.html#team">Team</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html#news">News</a></li></ul></div>
+            <div class="footer-col"><h6>Programs</h6><ul><li><a href="workshop.html">Workshop</a></li><li><a href="competition.html">Competition</a></li><li><a href="innovation.html">Innovation</a></li><li><a href="curriculum.html">Curriculum</a></li><li><a href="training.html">Training</a></li></ul></div>
+            <div class="footer-col"><h6>Engage</h6><ul><li><a href="donate.html">Donate</a></li><li><a href="shop.html">Shop</a></li><li><a href="index.html#partner">Partner With Us</a></li></ul></div>
+            <div class="footer-col"><h6>Contact</h6><ul><li><a href="mailto:donate@airii.org">donate@airii.org</a></li><li style="color:var(--text-light-muted); font-size:0.8125rem;">Irvine, California</li></ul></div>
+        </div>
+        <div class="footer-compliance"><strong style="color:var(--color-white);">501(c)(3) Nonprofit Organization.</strong> AIRII (formerly Magikid EmpowerTech Foundation) is a registered 501(c)(3) tax-exempt nonprofit organization. Donations are tax-deductible to the extent allowed by law.</div>
+        <div class="footer-bottom"><p>&copy; 2026 AI Robotics Innovation Institute. All rights reserved.</p><div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Accessibility</a></div></div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// Bilingual toggle
+function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+}
+
+// Donation form
+let donateType = 'once';
+let donateAmount = 50;
+
+function setDonateType(type) {
+    donateType = type;
+    document.querySelectorAll('.donate-type-toggle button').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    updateDisplay();
+}
+
+function setAmount(amount, btn) {
+    donateAmount = amount;
+    document.getElementById('customAmount').value = '';
+    document.querySelectorAll('.donate-amount-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    updateDisplay();
+}
+
+function setCustomAmount(input) {
+    const val = parseFloat(input.value);
+    if (val > 0) {
+        donateAmount = val;
+        document.querySelectorAll('.donate-amount-btn').forEach(b => b.classList.remove('active'));
+        updateDisplay();
+    }
+}
+
+function selectPurpose(purpose) {
+    document.getElementById('purposeSelect').value = purpose;
+    document.getElementById('donate-form').scrollIntoView({ behavior: 'smooth' });
+}
+
+function updateDisplay() {
+    const typeLabel = donateType === 'monthly' ? '/mo' : '';
+    const typeLabelZh = donateType === 'monthly' ? '/月' : '';
+    document.getElementById('displayAmount').textContent = '$' + donateAmount + typeLabel;
+    document.getElementById('displayAmountZh').textContent = '$' + donateAmount + typeLabelZh;
+    document.getElementById('displayType').textContent = '';
+    document.getElementById('displayTypeZh').textContent = '';
+}
+
+function submitDonation() {
+    const purpose = document.getElementById('purposeSelect').value;
+    const purposeNames = {
+        general: 'General Fund',
+        youth: 'Youth Charity Activities',
+        medical: 'Special Disease Education',
+        hackathon: 'Boundless AIRII Hackathon'
+    };
+    alert('Thank you! You are donating $' + donateAmount + (donateType === 'monthly' ? '/month' : '') + ' to ' + purposeNames[purpose] + '.\n\nYou will be redirected to our secure payment page.\n\n感谢您！您将捐赠 $' + donateAmount + (donateType === 'monthly' ? '/月' : '') + ' 给' + purposeNames[purpose] + '。');
+}
+</script>
+
+<!-- ===== WeChat QR Modal ===== -->
+<div class="modal-overlay" id="wechatModal">
+    <div class="modal-content">
+        <button class="modal-close" id="closeWechat">&times;</button>
+        <div class="qr-placeholder">WeChat QR Code</div>
+        <h4>Follow AIRII on WeChat</h4>
+        <p style="color:var(--text-muted); font-size:0.9375rem;">Scan the QR code with WeChat to follow our official account and get event updates.</p>
+    </div>
+</div>
+</body>
+</html>
