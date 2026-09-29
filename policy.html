@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AIRII Policy & Compliance System, including the full Youth Protection & Participant Safety Policy.">
+  <meta name="robots" content="index,follow">
+  <title>AIRII Policy & Compliance System</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230c3559'/%3E%3Cpath d='M16 47 29 16h6l13 31h-8l-2.4-6H26.1L24 47zm12.8-13h6.3L32 25.5z' fill='%23fff'/%3E%3Ccircle cx='48' cy='17' r='5' fill='%2325a79a'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --navy: #0c3559;
+      --navy-deep: #08263f;
+      --teal: #16847b;
+      --teal-light: #dff3f0;
+      --ink: #182431;
+      --muted: #5e6b78;
+      --line: #d8e0e7;
+      --paper: #ffffff;
+      --soft: #f4f7f9;
+      --warning: #fff7df;
+      --warning-line: #d99a1b;
+      --danger: #a73333;
+      --shadow: 0 12px 36px rgba(16, 43, 66, .09);
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6.5rem; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--soft);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.68;
+    }
+    a { color: var(--navy); text-underline-offset: .18em; }
+    a:hover { color: var(--teal); }
+    :focus-visible { outline: 3px solid #f1b94e; outline-offset: 3px; }
+    .skip-link {
+      position: fixed; left: 1rem; top: -5rem; z-index: 100;
+      padding: .7rem 1rem; color: white; background: var(--navy-deep); border-radius: 8px;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 40;
+      background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .header-inner {
+      max-width: 1320px; min-height: 74px; margin: 0 auto; padding: .8rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
+    .brand-mark {
+      display: grid; place-items: center; width: 42px; height: 42px;
+      color: white; background: var(--navy); border-radius: 11px; font-weight: 800; letter-spacing: -.04em;
+    }
+    .brand-name { color: var(--navy-deep); font-weight: 760; letter-spacing: .01em; }
+    .brand-sub { display: block; color: var(--muted); font-size: .78rem; font-weight: 520; }
+    .header-actions { display: flex; gap: .6rem; align-items: center; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 42px;
+      padding: .58rem .9rem; border: 1px solid var(--line); border-radius: 9px;
+      color: var(--navy-deep); background: white; font: inherit; font-size: .9rem; font-weight: 680;
+      cursor: pointer; text-decoration: none;
+    }
+    .button:hover { border-color: var(--teal); color: var(--teal); }
+
+    .hero {
+      color: white;
+      background:
+        radial-gradient(circle at 85% 12%, rgba(35, 174, 160, .28), transparent 23rem),
+        linear-gradient(135deg, var(--navy-deep), var(--navy));
+    }
+    .hero-inner { max-width: 1180px; margin: 0 auto; padding: 5.2rem 1.5rem 4.5rem; }
+    .eyebrow { margin: 0 0 .75rem; color: #8fe1d7; font-size: .82rem; font-weight: 780; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { max-width: 900px; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.4rem, 6vw, 4.9rem); font-weight: 500; line-height: 1.02; letter-spacing: -.035em; }
+    .hero-summary { max-width: 760px; margin: 1.35rem 0 0; color: #e1ebf2; font-size: 1.16rem; line-height: 1.7; }
+    .meta-grid { display: grid; grid-template-columns: repeat(5, minmax(140px, 1fr)); gap: 1px; max-width: 1120px; margin-top: 2.5rem; background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.2); border-radius: 12px; overflow: hidden; }
+    .meta-item { min-height: 84px; padding: 1rem; background: rgba(3, 27, 46, .4); }
+    .meta-label { display: block; margin-bottom: .25rem; color: #9cc8d6; font-size: .72rem; font-weight: 740; letter-spacing: .08em; text-transform: uppercase; }
+    .meta-value { color: white; font-size: .95rem; font-weight: 650; }
+
+    .age-strip { background: #092b48; border-top: 1px solid rgba(255,255,255,.12); }
+    .age-grid { max-width: 1180px; margin: 0 auto; padding: 1.4rem 1.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .age-item { padding-left: 1rem; border-left: 3px solid #42c2b5; }
+    .age-item strong { display: block; color: white; font-size: .98rem; }
+    .age-item span { color: #c5d7e4; font-size: .9rem; }
+
+    .layout { max-width: 1320px; margin: 0 auto; padding: 2rem 1.5rem 5rem; display: grid; grid-template-columns: 280px minmax(0, 880px); gap: 2.5rem; justify-content: center; }
+    .toc { position: sticky; top: 96px; align-self: start; max-height: calc(100vh - 118px); overflow: auto; padding: 1.15rem; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
+    .toc h2 { margin: 0 0 .6rem; color: var(--navy-deep); font-size: .78rem; letter-spacing: .11em; text-transform: uppercase; }
+    .toc ol { margin: 0; padding: 0; list-style: none; }
+    .toc li + li { margin-top: .14rem; }
+    .toc a { display: block; padding: .34rem .5rem; border-radius: 6px; color: #40505f; font-size: .87rem; line-height: 1.35; text-decoration: none; }
+    .toc a:hover { color: var(--navy); background: var(--teal-light); }
+    .toc .toc-part { margin-top: .68rem; color: var(--navy); font-weight: 760; }
+    .mobile-toc { display: none; margin-bottom: 1rem; background: white; border: 1px solid var(--line); border-radius: 10px; }
+    .mobile-toc summary { padding: .9rem 1rem; color: var(--navy); font-weight: 720; cursor: pointer; }
+    .mobile-toc nav { padding: 0 1rem 1rem; columns: 2; }
+    .mobile-toc a { display: block; margin: .35rem 0; break-inside: avoid; font-size: .9rem; }
+
+    main { min-width: 0; }
+    .policy-section { margin-bottom: 1.15rem; padding: clamp(1.35rem, 3vw, 2.25rem); background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 6px 24px rgba(20, 48, 70, .045); }
+    .section-kicker { margin: 0 0 .28rem; color: var(--teal); font-size: .76rem; font-weight: 780; letter-spacing: .1em; text-transform: uppercase; }
+    h2 { margin: 0 0 1rem; color: var(--navy-deep); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.65rem, 3vw, 2.25rem); font-weight: 540; line-height: 1.18; }
+    h3 { margin: 1.8rem 0 .55rem; color: var(--navy); font-size: 1.11rem; line-height: 1.35; }
+    h4 { margin: 1.4rem 0 .35rem; color: var(--ink); font-size: 1rem; }
+    p { margin: .6rem 0; }
+    ul, ol { padding-left: 1.35rem; }
+    li { margin: .35rem 0; }
+    .lead { color: #344656; font-size: 1.06rem; }
+    .policy-code { display: inline-flex; margin-bottom: .7rem; padding: .25rem .55rem; color: var(--navy); background: var(--teal-light); border-radius: 5px; font-size: .74rem; font-weight: 800; letter-spacing: .06em; }
+    .callout { margin: 1.2rem 0; padding: 1rem 1.1rem; background: #edf7f6; border-left: 4px solid var(--teal); border-radius: 0 9px 9px 0; }
+    .callout strong { color: var(--navy-deep); }
+    .alert { margin: 1.2rem 0; padding: 1rem 1.1rem; background: var(--warning); border-left: 4px solid var(--warning-line); border-radius: 0 9px 9px 0; }
+    .emergency { margin: 1.2rem 0; padding: 1rem 1.1rem; color: #692323; background: #fff0f0; border: 1px solid #edc6c6; border-radius: 9px; }
+    .placeholder { display: inline; padding: .08rem .25rem; color: #7a4d00; background: #fff0bd; border: 1px dashed #c08411; border-radius: 3px; font-weight: 730; }
+    .rule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin: 1.15rem 0; }
+    .rule-card { padding: 1rem; background: #f7f9fb; border: 1px solid var(--line); border-radius: 9px; }
+    .rule-card strong { display: block; margin-bottom: .25rem; color: var(--navy-deep); }
+    .cross-ref { display: inline-block; margin-top: .4rem; color: var(--teal); font-size: .86rem; font-weight: 680; }
+
+    .system-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+    .system-card { padding: 1rem; border: 1px solid var(--line); border-radius: 10px; }
+    .system-card.featured { grid-column: 1 / -1; background: var(--navy); border-color: var(--navy); color: white; }
+    .system-card .code { display: block; margin-bottom: .2rem; color: var(--teal); font-size: .73rem; font-weight: 820; letter-spacing: .1em; }
+    .system-card.featured .code { color: #86ddd4; }
+    .system-card h3 { margin: 0 0 .35rem; color: var(--navy-deep); font-size: 1rem; }
+    .system-card.featured h3 { color: white; }
+    .system-card p { margin: 0; font-size: .9rem; line-height: 1.55; }
+    .system-card.featured p { color: #dce8f0; }
+    .status { display: inline-block; margin-top: .65rem; padding: .2rem .45rem; background: #eaf0f4; border-radius: 999px; color: #536271; font-size: .72rem; font-weight: 720; }
+    .featured .status { color: white; background: rgba(255,255,255,.14); }
+
+    .definition-list { display: grid; grid-template-columns: 190px 1fr; margin: 1rem 0 0; border-top: 1px solid var(--line); }
+    .definition-list dt, .definition-list dd { margin: 0; padding: .82rem 0; border-bottom: 1px solid var(--line); }
+    .definition-list dt { padding-right: 1rem; color: var(--navy); font-weight: 750; }
+    .definition-list dd { color: #334352; }
+    .steps { counter-reset: steps; list-style: none; padding: 0; }
+    .steps li { position: relative; min-height: 3rem; padding: .2rem 0 1rem 3.4rem; }
+    .steps li::before { counter-increment: steps; content: counter(steps); position: absolute; left: 0; top: 0; display: grid; place-items: center; width: 2.35rem; height: 2.35rem; color: white; background: var(--navy); border-radius: 50%; font-weight: 780; }
+    .steps li + li::after { content: ""; position: absolute; left: 1.14rem; top: -1rem; width: 2px; height: 1rem; background: var(--line); }
+    .doc-table { width: 100%; margin: 1rem 0; border-collapse: collapse; font-size: .9rem; }
+    .doc-table th, .doc-table td { padding: .75rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .doc-table th { color: var(--navy-deep); background: #edf2f5; }
+
+    .footer { color: #d2dee7; background: var(--navy-deep); }
+    .footer-inner { max-width: 1180px; margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; }
+    .footer strong { color: white; }
+    .footer p { margin: .35rem 0; font-size: .88rem; }
+    .footer a { color: #94e0d8; }
+
+    @media (max-width: 900px) {
+      .meta-grid { grid-template-columns: 1fr 1fr; }
+      .age-grid { grid-template-columns: 1fr; }
+      .layout { display: block; padding-top: 1rem; }
+      .toc { display: none; }
+      .mobile-toc { display: block; }
+    }
+    @media (max-width: 620px) {
+      .header-inner { padding: .65rem 1rem; }
+      .brand-sub { display: none; }
+      .header-actions .button:first-child { display: none; }
+      .hero-inner { padding: 3.7rem 1rem 3.2rem; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .age-grid, .layout { padding-left: 1rem; padding-right: 1rem; }
+      .rule-grid, .system-grid, .footer-inner { grid-template-columns: 1fr; }
+      .system-card.featured { grid-column: auto; }
+      .definition-list { grid-template-columns: 1fr; }
+      .definition-list dt { padding-bottom: 0; border-bottom: 0; }
+      .definition-list dd { padding-top: .2rem; }
+      .mobile-toc nav { columns: 1; }
+    }
+    @media print {
+      @page { margin: .65in; }
+      body { color: #000; background: #fff; font-size: 10.5pt; }
+      .site-header, .toc, .mobile-toc, .header-actions, .skip-link { display: none !important; }
+      .hero { color: #000; background: #fff; border-bottom: 2px solid #183d5a; }
+      .hero-inner { padding: 0 0 .35in; }
+      .hero-summary, .meta-label, .age-item span { color: #333; }
+      .meta-grid { grid-template-columns: repeat(5, 1fr); border-color: #aaa; background: #aaa; }
+      .meta-item { min-height: 0; background: #fff; }
+      .meta-value, .age-item strong { color: #000; }
+      .age-strip { background: #fff; border-bottom: 1px solid #aaa; }
+      .age-grid { padding: .2in 0; }
+      .layout { display: block; max-width: none; padding: .35in 0; }
+      .policy-section { break-inside: avoid-page; padding: .18in 0; border: 0; box-shadow: none; }
+      .policy-section.major { break-before: page; }
+      .system-card.featured { color: #000; background: #fff; }
+      .system-card.featured h3, .featured .status { color: #000; }
+      .system-card.featured p { color: #222; }
+      .footer { color: #333; background: #fff; border-top: 1px solid #888; }
+      .footer strong { color: #000; }
+      a { color: #000; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to policy content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Return to AIRII home">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span class="brand-name">AIRII <span class="brand-sub">Policy &amp; Compliance System</span></span>
+      </a>
+      <div class="header-actions">
+        <a class="button" href="index.html">AIRII Home</a>
+        <button class="button" type="button" onclick="window.print()">Print / Save PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="top" class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Board-level public policy framework</p>
+      <h1>AIRII Policy &amp;<br>Compliance System</h1>
+      <p class="hero-summary">A unified governance framework for safe, inclusive, student-centered AI, robotics, research, mentorship, competition, and community programs. This page presents the complete P-01 Youth Protection &amp; Participant Safety Policy and the architecture of AIRII's related policies and standards.</p>
+      <div class="meta-grid" aria-label="Policy metadata">
+        <div class="meta-item"><span class="meta-label">Policy Number</span><span class="meta-value">P-01</span></div>
+        <div class="meta-item"><span class="meta-label">Version</span><span class="meta-value placeholder">[INSERT VERSION]</span></div>
+        <div class="meta-item"><span class="meta-label">Board Approval</span><span class="meta-value placeholder">[INSERT DATE]</span></div>
+        <div class="meta-item"><span class="meta-label">Effective Date</span><span class="meta-value">January 1, 2024</span></div>
+        <div class="meta-item"><span class="meta-label">Last Revised</span><span class="meta-value">September 21, 2026</span></div>
+      </div>
+    </div>
+    <div class="age-strip" aria-label="AIRII participant age framework">
+      <div class="age-grid">
+        <div class="age-item"><strong>Regular programs: generally age 13+</strong><span>Unless a specific program publishes a different approved age range.</span></div>
+        <div class="age-item"><strong>Minors: anyone under age 18</strong><span>AIRII youth-protection requirements apply to minor participants.</span></div>
+        <div class="age-item"><strong>Under 13: accompanied access only</strong><span>Permitted at designated activities under direct parent or legal-guardian supervision.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside class="toc" aria-label="Policy table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a class="toc-part" href="#policy-system">Policy system overview</a></li>
+        <li><a class="toc-part" href="#p01">P-01 full policy</a></li>
+        <li><a href="#purpose">1. Purpose, scope &amp; definitions</a></li>
+        <li><a href="#principles">2. Protection principles</a></li>
+        <li><a href="#interaction">3. Adult–minor interactions</a></li>
+        <li><a href="#prohibited">4. Prohibited conduct</a></li>
+        <li><a href="#qualification">5. Adult qualification &amp; training</a></li>
+        <li><a href="#participation">6. Parent consent &amp; participation</a></li>
+        <li><a href="#inclusion">7. Equal youth participation</a></li>
+        <li><a href="#reporting">8. Reporting &amp; response</a></li>
+        <li><a href="#incidents">9. Incident management</a></li>
+        <li><a href="#governance">10. Governance &amp; compliance</a></li>
+        <li><a class="toc-part" href="#implementation">Implementation documents</a></li>
+        <li><a class="toc-part" href="#disclaimer">Important notice</a></li>
+      </ol>
+    </aside>
+
+    <main id="main-content">
+      <details class="mobile-toc">
+        <summary>Table of contents</summary>
+        <nav aria-label="Mobile policy table of contents">
+          <a href="#policy-system">Policy system overview</a>
+          <a href="#p01">P-01 full policy</a>
+          <a href="#purpose">1. Purpose &amp; scope</a>
+          <a href="#principles">2. Principles</a>
+          <a href="#interaction">3. Interactions</a>
+          <a href="#prohibited">4. Prohibited conduct</a>
+          <a href="#qualification">5. Adult qualification</a>
+          <a href="#participation">6. Parent consent</a>
+          <a href="#inclusion">7. Equal participation</a>
+          <a href="#reporting">8. Reporting</a>
+          <a href="#incidents">9. Incident management</a>
+          <a href="#governance">10. Governance</a>
+          <a href="#implementation">Implementation documents</a>
+          <a href="#disclaimer">Important notice</a>
+        </nav>
+      </details>
+
+      <section id="policy-system" class="policy-section">
+        <p class="section-kicker">Governance architecture</p>
+        <h2>Seven Policies. Two Standards. One system.</h2>
+        <p class="lead">AIRII's compliance framework separates Board-level rules from operational standards so that each subject remains clear, maintainable, and accountable. The policies and standards below are designed to cross-reference one another rather than duplicate requirements.</p>
+        <div class="system-grid">
+          <article class="system-card featured">
+            <span class="code">P-01 · FULL POLICY BELOW</span>
+            <h3>Youth Protection &amp; Participant Safety Policy</h3>
+            <p>Safeguards for minors, adult–minor boundaries, accompanied visitors under age 13, consent, reporting, response, and oversight.</p>
+            <span class="status">Presented on this page</span>
+          </article>
+          <article class="system-card">
+            <span class="code">P-02</span>
+            <h3>Anti-Harassment, Sexual Misconduct &amp; Professional Conduct Policy</h3>
+            <p>Organization-wide conduct, complaint channels, conflict-free review, corrective action, and anti-retaliation protections.</p>
+            <span class="status">Separate policy</span>
+          </article>
+          <article class="system-card">
+            <span class="code">P-03</span>
+            <h3>Volunteer, Mentor &amp; Judge Policy</h3>
+            <p>Role eligibility, screening, training, assignment, supervision, confidentiality, conflicts, records, and removal.</p>
+            <span class="status">Separate policy</span>
+          </article>
+          <article class="system-card">
+            <span class="code">P-04</span>
+            <h3>Event Safety, Insurance &amp; Compliance Policy</h3>
+            <p>Event ownership, risk review, insurance and COIs, emergency planning, site controls, checklists, and event records.</p>
+            <span class="status">Separate policy</span>
+          </article>
+          <article class="system-card">
+            <span class="code">P-05</span>
+            <h3>Inclusion, Accessibility &amp; Equal Participation Policy</h3>
+            <p>Reasonable accommodation, Girl Powered support, barrier reduction, accessible participation, and equal treatment.</p>
+            <span class="status">Separate policy</span>
+          </article>
+          <article class="system-card">
+            <span class="code">P-06</span>
+            <h3>Food Safety &amp; Approved Vendor Policy</h3>
+            <p>Approved sources and vendors, dietary and allergy information, food handling, documentation, and incident response.</p>
+            <span class="status">Separate policy</span>
+          </article>
+          <article class="system-card">
+            <span class="code">P-07</span>
+            <h3>Robotics, AI &amp; Laboratory Safety Policy</h3>
+            <p>Robot operating zones, batteries, tools, fabrication, autonomous systems, laboratory access, PPE, and emergency stops.</p>
+            <span class="status">Separate policy</span>
+          </article>
+          <article class="system-card">
+            <span class="code">S-01 · STANDARD</span>
+            <h3>Student-Centered Education Standard</h3>
+            <p>Shared educational expectations for instructors, coaches, mentors, judges, volunteers, and technical personnel.</p>
+            <span class="status">Organization-wide standard</span>
+          </article>
+          <article class="system-card">
+            <span class="code">S-02 · STANDARD</span>
+            <h3>Event Publication &amp; Participant Information Standard</h3>
+            <p>Required public event information, including age, supervision, safety, accessibility, and accommodation disclosures.</p>
+            <span class="status">Organization-wide standard</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="p01" class="policy-section major">
+        <span class="policy-code">P-01</span>
+        <p class="section-kicker">Board-level core policy</p>
+        <h2>Youth Protection &amp; Participant Safety Policy</h2>
+        <p class="lead">AIRII is committed to providing safe, respectful, observable, accessible, and student-centered environments for young people. Protection of minors takes priority over program convenience, competition results, institutional reputation, or the status of any person involved.</p>
+        <div class="callout"><strong>Policy rule:</strong> Every person acting in an official AIRII capacity must understand and follow this policy. No title, technical expertise, donor relationship, partner affiliation, or volunteer status creates an exception.</div>
+      </section>
+
+      <section id="purpose" class="policy-section major">
+        <p class="section-kicker">Section 1</p>
+        <h2>Purpose, Scope &amp; Definitions</h2>
+        <h3>1.1 Purpose</h3>
+        <p>This policy establishes AIRII's minimum organization-wide safeguards for minors who participate in, attend, visit, or otherwise interact with AIRII programs. It defines adult responsibilities, appropriate boundaries, required supervision, parent or guardian participation, reporting duties, and AIRII's response to safety concerns.</p>
+
+        <h3>1.2 Scope</h3>
+        <p>This policy applies to AIRII-organized, sponsored, co-sponsored, or substantially operated programs in person or online, including competitions, hackathons, workshops, training, research, mentorship, demonstrations, showcases, open houses, community events, travel, and related communications.</p>
+        <p>Partner institutions and host venues may impose additional or more protective requirements. Where requirements differ, AIRII will follow applicable law and the more protective compatible standard unless legal counsel or the responsible authority directs otherwise.</p>
+
+        <h3>1.3 Participant Age Framework</h3>
+        <div class="rule-grid">
+          <div class="rule-card"><strong>Regular Program Participant</strong>A person admitted to an AIRII learning, research, mentorship, competition, or similar program. Regular AIRII programs are generally designed for participants age 13 and older unless the published program terms state otherwise.</div>
+          <div class="rule-card"><strong>Minor / Youth Participant</strong>Any person under 18 years of age. A minor admitted to a regular program is protected by this policy and must satisfy the applicable consent requirements.</div>
+          <div class="rule-card"><strong>Adult Participant</strong>A participant age 18 or older. Adult participants must follow AIRII conduct and safety requirements but do not sign a minor consent form.</div>
+          <div class="rule-card"><strong>Child Under Age 13</strong>A child who may attend only designated activities as an accompanied visitor or limited participant unless AIRII has specifically designed and approved a program for younger children.</div>
+        </div>
+        <div class="callout"><strong>Accompanied access for children under 13.</strong> When expressly permitted by an event, children under age 13 may attend designated tours, observations, open houses, community events, STEM project presentations or showcases, and other approved demonstration or visitor activities while under the direct supervision of a parent or legal guardian. They do not automatically become regular AIRII program participants.</div>
+        <p>Unless a program has been specifically designed and approved for younger children, a child under 13 may not independently participate in a 13+ training program, enter a restricted laboratory or robot operating area, independently use higher-risk equipment, remain in the care of AIRII staff, or enter participant-only areas. Parent or guardian presence does not waive AIRII safety, venue, robotics, laboratory, or access-control requirements.</p>
+
+        <h3>1.4 Key Definitions</h3>
+        <dl class="definition-list">
+          <dt>Covered Adult</dt><dd>Any adult acting in an official AIRII role who interacts with, supervises, instructs, transports, evaluates, mentors, communicates with, or has access to minors or minor participant information. This may include Board members, employees, contractors, technical personnel, instructors, coaches, mentors, judges, volunteers, interns, guest speakers, chaperones, and partner or sponsor representatives.</dd>
+          <dt>Observable and Interruptible</dt><dd>An interaction conducted so that another authorized adult can see, hear, enter, or otherwise reasonably interrupt it. Examples include open public areas, rooms with unobstructed windows, open doors, and approved online sessions with an additional authorized adult or a parent/guardian included.</dd>
+          <dt>Two-Adult Principle</dt><dd>A program design in which at least two authorized adults are present or reasonably available when adults directly supervise minors, to the greatest extent practicable and as required by the program's risk plan.</dd>
+          <dt>Parent / Guardian</dt><dd>A parent or person with legal authority and responsibility for the minor. A relative, friend, or sibling is not automatically a legal guardian.</dd>
+          <dt>Youth Protection Officer</dt><dd>The person designated by AIRII to administer this policy, receive internal concerns, coordinate protective action, maintain appropriate records, and support compliance. The role does not replace law enforcement, child protective services, emergency services, or a person's legal reporting obligations.</dd>
+        </dl>
+      </section>
+
+      <section id="principles" class="policy-section major">
+        <p class="section-kicker">Section 2</p>
+        <h2>Youth Protection Principles</h2>
+        <h3>2.1 Duty of Care and Safety First</h3>
+        <p>AIRII will plan and operate programs with reasonable care for participants' physical safety, emotional well-being, dignity, privacy, and access needs. When safety and program convenience conflict, safety controls.</p>
+
+        <h3>2.2 Observable and Interruptible Environments</h3>
+        <p>Adult–minor interactions should occur in locations and communication channels that are observable and interruptible. Doors should remain open when appropriate; windows must not be covered; isolated spaces should not be used for ordinary mentoring, instruction, judging, coaching, or feedback.</p>
+
+        <h3>2.3 Two-Adult Principle</h3>
+        <p>AIRII programs should be structured so that two authorized adults are present or reasonably available when minors are directly supervised. This principle is an organizational safeguard and does not mean that any two adults are automatically qualified; applicable screening, training, role assignment, and venue requirements still apply.</p>
+
+        <h3>2.4 Professional Boundaries</h3>
+        <p>Covered Adults must maintain relationships that are professional, program-related, age-appropriate, respectful, and free from exploitation, secrecy, favoritism, or personal dependency. Adults bear responsibility for establishing and maintaining boundaries even when a minor initiates a communication or interaction.</p>
+
+        <h3>2.5 Student-Centered Environment</h3>
+        <p>Instruction, mentoring, judging, and feedback must protect student dignity and learning. Public humiliation, intimidation, threats tied to performance, retaliation for questions, and pressure to conceal safety concerns are inconsistent with AIRII's Student-Centered Education Standard.</p>
+        <span class="cross-ref">Cross-reference: S-01 Student-Centered Education Standard</span>
+      </section>
+
+      <section id="interaction" class="policy-section major">
+        <p class="section-kicker">Section 3</p>
+        <h2>Adult–Minor Interaction Standards</h2>
+        <h3>3.1 One-on-One Interaction and Private Meetings</h3>
+        <p>Covered Adults should avoid being alone with a minor. When an individual conversation is necessary for a legitimate program purpose, it must be observable and interruptible, limited in duration, occur during approved program time, and be documented or disclosed to the Program Lead when appropriate. A second authorized adult or the minor's parent/guardian should be included whenever reasonably possible.</p>
+
+        <h3>3.2 Electronic Communication</h3>
+        <ul>
+          <li>Use AIRII-approved or program-approved channels and accounts for program communications.</li>
+          <li>Keep content professional, necessary, and related to the program.</li>
+          <li>Include another authorized adult or the minor's parent/guardian in direct communications whenever practicable.</li>
+          <li>Do not use disappearing messages, secret accounts, private late-night messaging, or communications designed to evade oversight.</li>
+          <li>Do not request personal or intimate images, passwords, private account access, or unrelated confidential information.</li>
+        </ul>
+
+        <h3>3.3 Social Media</h3>
+        <p>Covered Adults may not use personal social-media relationships to create private, secret, romantic, exploitative, or boundary-crossing contact with minors. Official program content should be shared through authorized channels consistent with AIRII's media, privacy, and parent-consent practices.</p>
+
+        <h3>3.4 Physical Contact</h3>
+        <p>Physical contact must be nonsexual, public, appropriate to the activity and the minor's needs, and consistent with the minor's expressed comfort. Necessary contact for first aid, immediate safety, or technical instruction should be limited to what is reasonably required. Corporal punishment, unwanted touching, sexualized contact, and contact intended to intimidate are prohibited.</p>
+
+        <h3>3.5 Photography, Video and Recording</h3>
+        <p>Images or recordings of minors may be created, stored, and published only for authorized purposes and in accordance with the applicable parent/guardian consent, event notice, privacy controls, and AIRII media procedures. Minors may not be photographed or recorded in changing areas, restrooms, private sleeping areas, medical situations, or other circumstances involving a reasonable expectation of privacy.</p>
+
+        <h3>3.6 Gifts, Favoritism and Secrecy</h3>
+        <p>Covered Adults must not cultivate exclusive relationships through unusual gifts, money, preferential access, secret communications, or promises. Program-recognized awards, scholarships, meals, materials, and items distributed on a fair and documented basis are permitted. Adults must not ask minors to keep secrets from a parent/guardian or from AIRII concerning safety, conduct, contact, or gifts.</p>
+
+        <h3>3.7 Transportation</h3>
+        <p>A Covered Adult may not transport a minor alone in a personal vehicle except in a genuine emergency when no safer alternative is available. Planned transportation requires prior AIRII authorization, appropriate drivers and vehicles, parent/guardian consent, and compliance with P-04. Whenever practicable, at least two minors or two authorized adults should be present.</p>
+
+        <h3>3.8 Travel and Overnight Programs</h3>
+        <p>Travel and overnight activities require a program-specific plan, written parent/guardian authorization, sleeping and room-assignment rules, supervision ratios, emergency contacts, medication and health procedures as applicable, and controls that prevent adults from sharing private sleeping rooms with unrelated minors. Event, host-institution, insurance, and applicable legal requirements also apply.</p>
+        <span class="cross-ref">Cross-reference: P-03 Volunteer, Mentor &amp; Judge Policy; P-04 Event Safety, Insurance &amp; Compliance Policy</span>
+      </section>
+
+      <section id="prohibited" class="policy-section major">
+        <p class="section-kicker">Section 4</p>
+        <h2>Prohibited Conduct</h2>
+        <p>The following conduct is prohibited in AIRII programs, communications, travel, and related activities:</p>
+        <ul>
+          <li>Child abuse, neglect, sexual abuse, sexual exploitation, sexual misconduct, grooming, or attempted grooming.</li>
+          <li>Romantic or sexual relationships, sexualized communication, sexual jokes, explicit material, or requests for sexual or intimate content involving a minor.</li>
+          <li>Harassment, discrimination, bullying, hazing, stalking, threats, retaliation, or deliberate humiliation.</li>
+          <li>Corporal punishment, physical violence, abusive restraint, or conduct that recklessly endangers a participant.</li>
+          <li>Alcohol, illegal drugs, impairment, or provision of age-restricted substances while responsible for minors.</li>
+          <li>Weapons or dangerous devices except when specifically authorized, lawfully controlled, and necessary to an approved technical activity with a written safety plan.</li>
+          <li>Secret meetings, unauthorized private communications, falsification of records, or interference with a safety report or investigation.</li>
+          <li>Unauthorized access to restricted laboratories, robot operating zones, participant data, medical information, or accommodation information.</li>
+        </ul>
+        <p>Conduct may violate this policy even if it does not meet a criminal or civil legal standard. AIRII may take immediate protective or administrative action while a concern is reviewed.</p>
+        <span class="cross-ref">Cross-reference: P-02 Anti-Harassment, Sexual Misconduct &amp; Professional Conduct Policy; P-07 Robotics, AI &amp; Laboratory Safety Policy</span>
+      </section>
+
+      <section id="qualification" class="policy-section major">
+        <p class="section-kicker">Section 5</p>
+        <h2>Adult Screening, Qualification &amp; Training</h2>
+        <h3>5.1 No Unapproved Official Role</h3>
+        <p>No adult may assume an AIRII role involving access to or responsibility for minors until AIRII confirms the person's role, required training, and any screening or documentation applicable to that assignment.</p>
+
+        <h3>5.2 Screening</h3>
+        <p>AIRII will use role- and risk-appropriate screening, which may include identity verification, application review, references, background checks, professional credentials, driving-record review, conflict disclosures, and partner verification. The required process will be defined under P-03 and applicable program, venue, insurer, grant, and legal requirements.</p>
+
+        <h3>5.3 Required Training for Official Adults</h3>
+        <p>All adults serving in an official AIRII capacity must complete the training AIRII assigns to their role before service and must remain current. The baseline curriculum will include, as applicable:</p>
+        <ol>
+          <li>Youth protection, recognizing signs of abuse or neglect, professional boundaries, and reporting responsibilities.</li>
+          <li>Sexual-harassment and sexual-misconduct prevention, anti-retaliation, and professional conduct.</li>
+          <li>AIRII's two-adult and observable-and-interruptible expectations.</li>
+          <li>Student-centered education, respectful feedback, and protection from humiliation or intimidation.</li>
+          <li>Emergency response, incident documentation, check-in/check-out, missing-participant procedures, and site-specific safety.</li>
+          <li>Role-specific requirements for mentors, judges, volunteers, instructors, drivers, technical personnel, laboratory personnel, and event leads.</li>
+          <li>Robotics, AI-controlled physical systems, tools, batteries, laboratory, food, allergy, accessibility, privacy, or other specialized topics when relevant to the assignment.</li>
+        </ol>
+        <p>AIRII will maintain training records and establish completion, renewal, and refresher requirements. A person whose required training or screening is incomplete, expired, or unsatisfactory may not perform the affected role.</p>
+
+        <h3>5.4 Guests, Partners and Vendors</h3>
+        <p>Guest speakers, partner representatives, sponsors, media, vendors, and visitors may not independently supervise minors unless AIRII has approved them as Covered Adults for that purpose. Short-term guests must remain within the access and supervision boundaries assigned by AIRII.</p>
+        <span class="cross-ref">Cross-reference: P-02, P-03, P-04, P-06, P-07 and S-01</span>
+      </section>
+
+      <section id="participation" class="policy-section major">
+        <p class="section-kicker">Section 6</p>
+        <h2>Parent / Guardian Consent &amp; Minor Participation</h2>
+        <h3>6.1 Consent Before Participation</h3>
+        <p>Before a minor participates in a regular AIRII program without remaining under the direct supervision of their parent/legal guardian, AIRII must obtain the parent/guardian acknowledgments and consents required for that program. Consent must be informed, program-specific where appropriate, documented, and retained with access controls.</p>
+
+        <h3>6.2 Required Participant Information</h3>
+        <p>Depending on program risk and format, AIRII registration may require:</p>
+        <ul>
+          <li>Participant age and parent/guardian identity and contact information;</li>
+          <li>Emergency contacts and authorized pickup or release information;</li>
+          <li>Relevant health, medication, allergy, food restriction, disability, and accommodation information;</li>
+          <li>Participation acknowledgment, code of conduct, liability or risk forms reviewed for the program;</li>
+          <li>Separate choices for photography/media, transportation, travel, overnight participation, and special activities where applicable.</li>
+        </ul>
+        <p>Information must be limited to what AIRII reasonably needs, handled confidentially, and available only to personnel who need it for program administration, safety, accommodation, emergency response, or legal compliance.</p>
+
+        <h3>6.3 Parent Communication</h3>
+        <p>AIRII will provide parents/guardians with material program information, including age eligibility, schedule, supervision expectations, location, contact methods, significant risks, required forms, transportation or travel terms, accessibility contact, and relevant emergency procedures.</p>
+
+        <h3>6.4 Accompanied Visitors Under Age 13</h3>
+        <p>For designated visitor activities, the parent or legal guardian must remain physically present, attentive, and responsible for the child. The parent/guardian must follow staff directions, keep the child out of restricted areas, and immediately notify event personnel of a safety concern. AIRII may limit or end access when supervision is insufficient or site conditions make participation unsafe.</p>
+        <span class="cross-ref">Cross-reference: P-04 Event Safety, Insurance &amp; Compliance Policy; P-06 Food Safety &amp; Approved Vendor Policy; S-02 Event Publication &amp; Participant Information Standard</span>
+      </section>
+
+      <section id="inclusion" class="policy-section major">
+        <p class="section-kicker">Section 7</p>
+        <h2>Accessibility &amp; Equal Youth Participation</h2>
+        <p>AIRII seeks to reduce barriers to participation in AI, robotics, engineering, and emerging technologies, including barriers affecting girls and women, people with disabilities, financially constrained families, first-time participants, and historically underserved or underrepresented communities.</p>
+        <ul>
+          <li>Safety rules must be applied fairly and may not be used as a pretext for discrimination or exclusion.</li>
+          <li>AIRII will provide a clear channel for disability-related and other reasonable accommodation requests.</li>
+          <li>Accommodation information will be handled respectfully and shared only with personnel who need it.</li>
+          <li>Programs should plan accessible routes, seating, viewing, workstations, restrooms, check-in, and emergency procedures appropriate to the venue and activity.</li>
+          <li>Girl Powered support should expand access, mentoring, belonging, and technical participation without forced segregation.</li>
+          <li>No person may be retaliated against for requesting an accommodation or raising an inclusion concern.</li>
+        </ul>
+        <p>Official event pages and recruitment materials must publish the age range, supervision expectations, accessibility and accommodation contact, and other participant information required by S-02.</p>
+        <span class="cross-ref">Cross-reference: P-05 Inclusion, Accessibility &amp; Equal Participation Policy; S-02 Event Publication &amp; Participant Information Standard</span>
+      </section>
+
+      <section id="reporting" class="policy-section major">
+        <p class="section-kicker">Section 8</p>
+        <h2>Reporting &amp; Immediate Response</h2>
+        <div class="emergency"><strong>Immediate danger or medical emergency:</strong> Call 911 or the appropriate local emergency service first. Take reasonable steps to protect the participant without placing others in danger.</div>
+
+        <h3>8.1 Duty to Raise Concerns</h3>
+        <p>Any person who observes, receives, or reasonably suspects abuse, neglect, grooming, exploitation, boundary violations, harassment, threats, retaliation, unsafe supervision, or another youth-safety concern in connection with AIRII should report it promptly through the applicable external and internal channels.</p>
+
+        <h3>8.2 Legally Required External Reports</h3>
+        <p>Child-abuse and neglect reporting duties differ by jurisdiction and by the reporter's role. Anyone who is required by applicable law to report must make the report to the designated child protective services, law-enforcement, or other authorized agency within the required timeframe. AIRII management approval is not required, and an internal report does not replace or delay a legally required external report.</p>
+        <div class="alert"><strong>Implementation required before publication:</strong> Insert the state-appropriate reporting instructions for AIRII's operating locations and have counsel confirm the reporting protocol. Do not rely on this webpage as a directory of current government reporting contacts.</div>
+
+        <h3>8.3 Internal Reporting</h3>
+        <p>Internal concerns should be directed to the AIRII Youth Protection Officer or the designated alternate. If the concern involves that person or a conflict exists, use the alternate or Board-designated independent channel.</p>
+        <p><strong>Primary channel:</strong> <a href="mailto:angell@airii.ai">angell@airii.ai</a><br>
+        <strong>Alternate / conflict-free channel:</strong> <a href="mailto:alana@airii.ai">alana@airii.ai</a></p>
+
+        <h3>8.4 Responding to a Disclosure</h3>
+        <ul>
+          <li>Listen calmly, take the disclosure seriously, and prioritize immediate safety.</li>
+          <li>Do not promise secrecy. Explain that information will be shared only with people who need to protect the child or respond as required.</li>
+          <li>Do not interrogate, investigate, confront the alleged wrongdoer, or ask leading questions.</li>
+          <li>Record the person's words and relevant facts as accurately as possible, without speculation.</li>
+          <li>Make any required external report and notify AIRII through the appropriate internal channel.</li>
+        </ul>
+
+        <h3>8.5 Protection and Non-Retaliation</h3>
+        <p>AIRII may separate individuals, limit access, suspend duties, adjust supervision, preserve records, contact a parent/guardian when appropriate, or take other interim measures. Good-faith reporting, participation in a review, requesting an accommodation, or refusing unsafe conduct must not result in retaliation.</p>
+      </section>
+
+      <section id="incidents" class="policy-section major">
+        <p class="section-kicker">Section 9</p>
+        <h2>Incident Management</h2>
+        <ol class="steps">
+          <li><strong>Protect.</strong> Address immediate danger, injury, medical needs, missing-participant risk, or unsafe access. Contact emergency services when needed.</li>
+          <li><strong>Report.</strong> Complete required external reports without waiting for internal approval, then notify the AIRII Youth Protection Officer or alternate.</li>
+          <li><strong>Preserve.</strong> Protect relevant messages, rosters, images, access records, witness information, consent forms, and incident notes. Do not alter or circulate them unnecessarily.</li>
+          <li><strong>Document.</strong> Use the Youth Safety Incident / Concern Report. Separate observed facts, direct statements, actions taken, and unresolved questions.</li>
+          <li><strong>Coordinate.</strong> Cooperate with emergency services, child protective services, law enforcement, insurers, venue or partner authorities, and legal counsel as appropriate.</li>
+          <li><strong>Follow up.</strong> Review protective measures, participant support, communication, corrective action, record retention, and prevention improvements while respecting privacy.</li>
+        </ol>
+        <p>AIRII's internal review must not interfere with an external investigation. Information will be shared on a need-to-know basis, subject to law, safety needs, due process, insurance obligations, and partner requirements. AIRII cannot promise absolute confidentiality.</p>
+      </section>
+
+      <section id="governance" class="policy-section major">
+        <p class="section-kicker">Section 10</p>
+        <h2>Governance, Compliance &amp; Review</h2>
+        <h3>10.1 Board Oversight</h3>
+        <p>The AIRII Board approves this policy and oversees its material revision. The Board receives appropriate high-level information about implementation, material risks, and corrective actions without unnecessary disclosure of sensitive personal information.</p>
+
+        <h3>10.2 Policy Administration</h3>
+        <p>AIRII will designate a Youth Protection Officer and an alternate, define their authority, maintain conflict-free escalation, and ensure that programs have a named Program Lead or Event Owner. Operational responsibility remains shared: every Covered Adult must follow this policy and raise concerns.</p>
+
+        <h3>10.3 Violations and Corrective Action</h3>
+        <p>Violations may result in coaching, retraining, restricted duties, removal from an event, suspension, termination of employment or volunteer service, ending a partnership or vendor relationship, exclusion from future programs, insurance notice, and reporting to authorities or credentialing bodies as appropriate.</p>
+
+        <h3>10.4 Records and Privacy</h3>
+        <p>AIRII will retain consent, training, screening status, incident, and compliance records according to an approved retention schedule and applicable law. Access will be limited based on role and need. Highly sensitive information should not be included in ordinary volunteer rosters or general event files.</p>
+
+        <h3>10.5 Annual and Event-Based Review</h3>
+        <p>This policy should be reviewed at least annually and after a material incident, significant legal change, insurance requirement, expansion into a new jurisdiction, or substantial change in AIRII programming. AIRII may issue procedures and forms consistent with this policy without changing its core protections.</p>
+
+        <h3>10.6 Cross-Policy Compliance</h3>
+        <p>Programs involving minors must also comply with all applicable AIRII policies and standards, including P-02 through P-07 and S-01 through S-02. If a conflict is identified, the issue must be escalated to the Youth Protection Officer and responsible organizational leadership before the affected activity proceeds.</p>
+      </section>
+
+      <section id="implementation" class="policy-section major">
+        <p class="section-kicker">Operational layer</p>
+        <h2>Required Implementation Documents</h2>
+        <p>This public policy is implemented through controlled forms, agreements, checklists, and records. These documents should use their own version numbers and approval owners.</p>
+        <div style="overflow-x:auto">
+          <table class="doc-table">
+            <thead><tr><th>Document</th><th>Purpose</th><th>Typical user</th></tr></thead>
+            <tbody>
+              <tr><td>Adult Staff / Mentor / Volunteer Code of Conduct</td><td>Signed boundaries, conduct, reporting, confidentiality, and compliance acknowledgment.</td><td>Covered Adults</td></tr>
+              <tr><td>Minor Participation &amp; Parent/Guardian Consent</td><td>Program participation, emergency information, acknowledgments, and separately stated permissions.</td><td>Parent/legal guardian</td></tr>
+              <tr><td>Adult Participant Waiver &amp; Code of Conduct</td><td>Terms for participants age 18 and older.</td><td>Adult participants</td></tr>
+              <tr><td>Youth Safety Incident / Concern Report</td><td>Consistent factual record of safety concerns, disclosures, boundary violations, and response.</td><td>Staff / designated officials</td></tr>
+              <tr><td>Event Safety &amp; Compliance Checklist</td><td>Pre-event verification of ownership, staffing, consent, accessibility, technical safety, food, insurance, and emergency plans.</td><td>Event Owner</td></tr>
+              <tr><td>Adult Training &amp; Compliance Record</td><td>Role, required courses, completion, renewal, screening status, and assignment approval.</td><td>Policy administrator</td></tr>
+              <tr><td>Accessibility / Accommodation Request</td><td>Confidential request intake and implementation tracking.</td><td>Participants / families</td></tr>
+              <tr><td>Emergency Action &amp; Incident Report</td><td>Medical, safety, equipment, facility, food, or operational emergencies not limited to youth protection.</td><td>Event safety personnel</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="disclaimer" class="policy-section major">
+        <p class="section-kicker">Important notice</p>
+        <h2>Policy Status &amp; Legal Disclaimer</h2>
+        <p>This page is an organizational policy framework, not legal advice, medical advice, a guarantee of safety, or a substitute for emergency response. It does not create a contractual right, employment guarantee, or private cause of action. AIRII may apply additional procedures, suspend activities, or take protective measures consistent with safety and applicable law.</p>
+        <p>Federal, state, local, host-institution, venue, insurer, grant, and partner requirements may vary and may change. Applicable law controls where it imposes a requirement different from this policy. Before Board adoption and public release, AIRII should obtain review by qualified legal counsel and its insurance/risk professionals, confirm all reporting channels, and replace every highlighted placeholder.</p>
+        <p><strong>Responsible office:</strong> Yin Zhang<br>
+        <strong>Policy owner:</strong> Angell You<br>
+        <strong>Next review date:</strong> December 1, 2026<br>
+        <strong>General email:</strong> <a href="mailto:info@airii.ai">info@airii.ai</a><br>
+        <strong>Public contact:</strong> Yin Zhang · <a href="mailto:info@airii.ai">info@airii.ai</a></p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AIRII Policy &amp; Compliance System</strong><p>Safe, accessible, inclusive, and student-centered AI and robotics programs.</p></div>
+      <div><p><strong>Document:</strong> P-01 Youth Protection &amp; Participant Safety Policy</p><p><strong>Effective:</strong> January 1, 2024 · <strong>Last revised:</strong> September 21, 2026</p><p><strong>General email:</strong> <a href="mailto:info@airii.ai">info@airii.ai</a></p><p><a href="#top">Return to top</a></p></div>
+    </div>
+  </footer>
+</body>
+</html>
